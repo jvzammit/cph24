@@ -48,16 +48,22 @@ What you do on your local is up to you. Just make sure to run below commands wit
  poetry install
  ```
 
+Create a copy of the `.env` file, in this demo for sharing environment variables:
+
+```
+$ cd project
+$ cp .env.example .env
+```
+
 Make sure you're in `project` directory before running the test commands.
 
 * Run the tests
 
   ```
-  $ cd project
   $ ./manage.py test
   ```
 
-* Run tests and generate coverage report
+* Run tests and generate coverage report:
 
   ```
   $ coverage run ./manage.py test && coverage report -m
