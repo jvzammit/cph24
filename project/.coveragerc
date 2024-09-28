@@ -1,0 +1,12 @@
+[run]
+branch = True
+omit =
+  *migrations*
+  */tests/*
+  */settings/*
+
+[report]
+omit =
+  manage.py
+  *migrations*
+  tests/*

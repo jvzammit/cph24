@@ -1,0 +1,38 @@
+[tool.black]
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+skip_glob = "*/migrations/*"
+
+[tool.autoflake]
+in-place = true
+quiet = true
+recursive = true
+remove-all-unused-imports = true
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.poetry]
+name = "cph24"
+version = "0.1.0"
+description = "Package supporting talk."
+authors = [
+    "Joseph V. Zammit <jvzammit@gmail.com>",
+]
+readme = "README.md"
+[tool.poetry.dependencies]
+python = "~3.12"
+django = "^5.1.1"
+arrow = "^1.3.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.7"
+factory-boy = "^3.3.1"
+pre-commit = "^3.8.0"
+black = "^24.8.0"
+isort = "^5.13.2"
+autoflake = "^2.3.1"
+coverage = "^7.6.1"
+
