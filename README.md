@@ -105,3 +105,33 @@ You can use `nox` command as well to run linting, mypy, tests/coverage in one "n
 ```
 $ nox
 ```
+
+## Running the applications
+
+Make sure you're in `project` directory.
+
+### Run Django
+
+First time:
+
+```
+$ manage.py migrate
+```
+
+And from then on:
+
+```
+$ manage.py runserver
+```
+
+This will run Django at `http://localhost:8000/`
+
+### Run FastAPI
+
+To run FastAPI at `http://localhost:8001/`
+
+```
+$ fastapi dev backend/main.py --port 8001
+```
+
+You can tweak ports as you like.
