@@ -93,3 +93,9 @@ config/urls.py                          3      0      0      0   100%
 -------------------------------------------------------------------------------
 TOTAL                                  50      0      0      0   100%
 ```
+
+You can use `nox` command as well to run linting, mypy, tests/coverage in one "nox" command:
+
+```
+$ nox
+```
