@@ -11,7 +11,7 @@ class Conversation(models.Model):
     )
     # other fields here would be agent_id and visitor_id, both UUIDs
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.external_id} - {self.timestamp.strftime("%Y-%m-%d %H:%M:%S")}"
 
 
@@ -32,5 +32,5 @@ class Message(models.Model):
     direction = models.CharField(max_length=16, choices=MessageDirection)
     text = models.TextField()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.external_id} - {self.direction} - {self.timestamp.strftime("%Y-%m-%d %H:%M:%S")}"
