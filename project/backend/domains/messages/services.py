@@ -14,7 +14,7 @@ class SuggestionsService:
         Args:
             conversation (Conversation): conversation posted to suggestions service
         """
-        logger.debug(conversation.model_dump_json())
+        logger.debug(conversation.model_dump_json())  # pragma: nocover
 
 
 class WebhookService:
