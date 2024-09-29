@@ -1,7 +1,7 @@
 import nox
 
 nox.options.reuse_existing_virtualenvs = True
-nox.options.sessions = ["lint", "mypy", "test_admin"]
+nox.options.sessions = ["lint", "mypy", "test_admin", "test_backend"]
 
 
 def run_external(session, *args):
@@ -29,6 +29,7 @@ def mypy(session) -> None:
 def test_admin(session) -> None:
     """Run coverage sequence."""
     session.cd("project")
+    run_external(session, "coverage", "erase")
     omit_glob = "manage.py,*/migrations/*,backend/*"
     run_external(
         session,
@@ -41,3 +42,20 @@ def test_admin(session) -> None:
         "--noinput",
     )
     run_external(session, "coverage", "report", f"--omit={omit_glob}", "-m")
+
+
+@nox.session
+def test_backend(session) -> None:
+    """Run coverage sequence."""
+    session.cd("project")
+    run_external(session, "coverage", "erase")
+    run_external(
+        session,
+        "coverage",
+        "run",
+        "--include=backend/*",
+        "-m",
+        "pytest",
+        "backend/tests",
+    )
+    run_external(session, "coverage", "report", "-m")

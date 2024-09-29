@@ -135,3 +135,11 @@ $ fastapi dev backend/main.py --port 8001
 ```
 
 You can tweak ports as you like.
+
+To run FastAPI tests:
+
+```
+pytest backend/tests
+```
+
+For coverage check the `test_backend` session in the `noxfile`.
