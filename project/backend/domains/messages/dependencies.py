@@ -1,6 +1,7 @@
+from fastapi import Depends
+
 from backend.domains.messages.repositories import ConversationRepository
 from backend.domains.messages.services import SuggestionsService, WebhookService
-from fastapi import Depends
 
 
 def get_conversation_repository() -> ConversationRepository:

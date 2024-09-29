@@ -4,6 +4,10 @@ target-version = ["py312"]
 [tool.isort]
 profile = "black"
 skip_glob = "*/migrations/*"
+known_django = "django"
+known_fastapi = "fastapi"
+known_local_folder = "agents,backend,config"
+sections = "FUTURE,STDLIB,FIRSTPARTY,THIRDPARTY,DJANGO,FASTAPI,LOCALFOLDER"
 
 [tool.autoflake]
 in-place = true

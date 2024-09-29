@@ -1,10 +1,12 @@
 from typing import Annotated
 
+from starlette.responses import Response
+
+from fastapi import APIRouter, Depends
+
 from backend.domains.messages.dependencies import get_webhook_service
 from backend.domains.messages.models import WebhookPayload
 from backend.domains.messages.services import WebhookService
-from fastapi import APIRouter, Depends
-from starlette.responses import Response
 
 api_router = APIRouter(tags=["Messages"])
 

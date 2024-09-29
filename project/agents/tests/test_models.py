@@ -1,6 +1,8 @@
 import arrow
-from agents.tests.factories import ConversationFactory, MessageFactory
+
 from django.test import TestCase
+
+from agents.tests.factories import ConversationFactory, MessageFactory
 
 
 class ConversationTests(TestCase):

@@ -1,8 +1,10 @@
 import uuid
 
 import factory
-from agents.models import MessageDirection
+
 from django.utils import timezone
+
+from agents.models import MessageDirection
 
 
 class ConversationFactory(factory.django.DjangoModelFactory):

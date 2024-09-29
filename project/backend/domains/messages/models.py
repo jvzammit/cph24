@@ -2,8 +2,9 @@ from datetime import datetime
 from typing import Literal
 from uuid import UUID
 
-from agents import models as orm
 from pydantic import BaseModel
+
+from agents import models as orm
 
 
 class Message(BaseModel):
