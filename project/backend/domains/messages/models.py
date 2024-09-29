@@ -10,7 +10,7 @@ from agents import models as orm
 class Message(BaseModel):
     external_id: UUID
     timestamp: datetime
-    direction: Literal[orm.MessageDirection.INBOUND, orm.MessageDirection.OUTBOUND]
+    direction: Literal[orm.MessageDirection.INBOUND, orm.MessageDirection.OUTBOUND]  # type: ignore[valid-type]
 
 
 class Conversation(BaseModel):
@@ -23,5 +23,5 @@ class WebhookPayload(BaseModel):
     message_id: UUID
     conversation_id: UUID
     timestamp: datetime
-    direction: Literal[orm.MessageDirection.INBOUND, orm.MessageDirection.OUTBOUND]
+    direction: Literal[orm.MessageDirection.INBOUND, orm.MessageDirection.OUTBOUND]  # type: ignore[valid-type]
     text: str
