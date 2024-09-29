@@ -43,6 +43,7 @@ mypy = "^1.11.2"
 nox = "^2024.4.15"
 fastapi-cli = "^0.0.5"
 pytest-django = "^4.9.0"
+django-extensions = "^3.2.3"
 
 [tool.mypy]
 python_version = "3.12"
