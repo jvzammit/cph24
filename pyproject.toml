@@ -48,6 +48,9 @@ nox = "^2024.4.15"
 fastapi-cli = "^0.0.5"
 pytest-django = "^4.9.0"
 django-extensions = "^3.2.3"
+pytest-asyncio = "^0.24.0"
+ipdb = "^0.13.13"
+httpx = "^0.27.2"
 
 [tool.mypy]
 python_version = "3.12"
@@ -72,3 +75,9 @@ module = [
     "*.migrations.*",
 ]
 ignore_errors = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+python_classes = "*Tests"
+addopts = "--no-migrations"
+asyncio_default_fixture_loop_scope = "function"
