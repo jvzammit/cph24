@@ -6,7 +6,7 @@ from backend.main import app
 
 class override_dependency:
     """
-    Override a dependency in a test. Deletes the override on exit.
+    Override a dependency in a test. Delete the override on exit.
     """
 
     def __init__(self, dependency, fake_dependency):

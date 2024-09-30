@@ -14,11 +14,6 @@ Starts with Django project and an app called `agents`.
 
 Both `Conversation` and `Message` have unique UUID keys as set by an external platform.
 
-With models defined in Django it's possible to:
-* have their evoluation managed via migrations,
-* have their CRUD exposed via admin interface,
-* have tests use established model factory libraries as [factoryboy](https://factoryboy.readthedocs.io/en/stable/) or [model-bakery](https://model-bakery.readthedocs.io/en/latest/)
-
 We expose a webhook with messages and conversations; when we receive such webhook request we want to:
 
 1. store the message and conversation
@@ -140,6 +135,26 @@ To run FastAPI tests:
 
 ```
 pytest backend/tests
+```
+
+Sample output:
+
+```
+$ pytest backend
+========================= test session starts ==========================
+platform darwin -- Python 3.12.3, pytest-8.3.3, pluggy-1.5.0
+django: version: 5.1.1
+rootdir: /Users/jv/dev/cph24
+configfile: pyproject.toml
+plugins: asyncio-0.24.0, anyio-4.6.0, django-4.9.0, Faker-30.0.0
+asyncio: mode=Mode.AUTO, default_loop_scope=function
+collected 4 items
+
+backend/tests/domains/messages/test_routes.py .                  [ 25%]
+backend/tests/domains/messages/test_repositories.py ..           [ 75%]
+backend/tests/domains/messages/test_services.py .                [100%]
+
+========================== 4 passed in 0.12s ===========================
 ```
 
 For coverage check the `test_backend` session in the `noxfile`.

@@ -20,11 +20,11 @@ class ConversationRepositoryTests:
             "text": "string",
         }
         payload = WebhookPayload(**request_payload)
-        # Given payload conversation with external_id exists
+        # And payload conversation with external_id exists
         conversation = ConversationFactory(
             external_id=request_payload["conversation_id"]
         )
-        # And already a message
+        # And a message already exists for this conversation
         MessageFactory(conversation=conversation)
         # Given repository
         repository = ConversationRepository()
