@@ -1,6 +1,6 @@
 # cph24
 
-Django Day CPH 2024
+[Django Day CPH 2024](https://2024.djangoday.dk/) proof of concept application.
 
 ## Demo application
 
