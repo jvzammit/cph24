@@ -14,17 +14,17 @@ class ConversationRepository:
             Conversation: complete conversation after persisting message.
         """
         defaults = {"timestamp": payload.timestamp}
-        conversation, _ = await orm.Conversation.objects.aget_or_create(
+        orm_conversation, _ = await orm.Conversation.objects.aget_or_create(
             external_id=payload.conversation_id, defaults=defaults
         )
         await orm.Message.objects.acreate(
-            conversation=conversation,
+            conversation=orm_conversation,
             timestamp=payload.timestamp,
             external_id=payload.message_id,
             direction=payload.direction,
             text=payload.text,
         )
-        return await _conversation_from_orm(conversation)
+        return await _conversation_from_orm(orm_conversation)
 
 
 async def _conversation_from_orm(orm_conversation: orm.Conversation) -> Conversation:
